@@ -4,8 +4,6 @@ WORKDIR /fbbe
 
 COPY ./ ./
 
-#RUN cargo build --release
-
 RUN cargo install --path .
 
 EXPOSE 3000
