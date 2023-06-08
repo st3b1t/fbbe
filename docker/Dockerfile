@@ -1,13 +1,13 @@
-FROM rust:1.65 as builder
+FROM rust:1.65
 
 WORKDIR /fbbe
 
 COPY ./ ./
 
-RUN cargo build --release
+#RUN cargo build --release
 
-#TODO multistage FROM alpine
+RUN cargo install --path .
 
 EXPOSE 3000
 
-CMD ["./target/release/fbbe"]
+CMD ["fbbe"]
