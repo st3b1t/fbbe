@@ -1,0 +1,14 @@
+
+version: '3'
+
+services:
+  explorer:
+    container_name: fbbe-explorer
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    environment:
+      BITCOIND_REST_URL: 'http://172.17.0.1:8332'
+    ports:
+      - "3000:3000"
+    #image: fbbe-explorer:latest
